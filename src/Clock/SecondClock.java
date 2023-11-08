@@ -1,4 +1,4 @@
-package Lab2;
+package Clock;
 
 public class SecondClock extends MinuteClock implements IClock{
     public int second;
@@ -8,22 +8,24 @@ public class SecondClock extends MinuteClock implements IClock{
         name = "emptyName";
         price = 0.0;
     }
-    public SecondClock (String _name, double _price, int _hour, int _minute, int _second){
-        name = _name;
-        price = _price;
-        if (_hour < 0 || _hour > 24 || _minute < 0 || _minute > 60 || _second < 0 || _second > 60)
+    public SecondClock (String name, double price, int hour, int minute, int second) throws InvalidTime{
+        this.name = name;
+        this.price = price;
+        if (hour < 0 || hour > 24 || minute < 0 || minute > 60 || second < 0 || second > 60)
             throw new IllegalArgumentException();
-        hour = _hour;
-        minute = _minute;
-        second = _second;
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
     }
 
-    public void setSecond(int _second){
-        if (_second < 0 || _second > 60)
+    @Override
+    public void setSecond(int second) throws InvalidTime {
+        if (second < 0 || second > 60)
             throw new IllegalArgumentException();
-        second = _second;
+        this.second = second;
     }
 
+    @Override
     public int getSecond()
     {
         return second;

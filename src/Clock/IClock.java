@@ -1,10 +1,10 @@
-package Lab2;
+package Clock;
 
 public interface IClock {
 
-    public void setHour(int _hour);
-    public void setMinute(int _minute);
-    public void setSecond(int _second);
+    public void setHour(int hour) throws InvalidTime;
+    public void setMinute(int minute) throws InvalidTime;
+    public void setSecond(int second) throws InvalidTime;
 
     public String getName();
     public double getPrice();

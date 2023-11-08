@@ -1,17 +1,17 @@
-package Lab2;
+package Clock;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidTime{
 
-        MinuteClock minClock1 = new MinuteClock("minClock1", 2.0, 23, 59);
+        IClock minClock1 = BClock.build(TypeClock.MinuteClock, "minClock1", 1.0, 23, 59, 0);
         System.out.println(minClock1.toString());
-        minClock1.setHour(2);
-        minClock1.setMinute(2);
+        minClock1.setHour(1);
+        minClock1.setMinute(1);
         System.out.println(minClock1.toString());
 
         System.out.println();
 
-        SecondClock secClock1 = new SecondClock("secClock1", 2.0, 23, 59, 59);
+        IClock secClock1 = BClock.build(TypeClock.SecondClock, "secClock1", 2.0, 23, 59, 59);
         System.out.println(secClock1.toString());
         secClock1.setHour(2);
         secClock1.setMinute(2);
