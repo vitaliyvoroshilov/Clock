@@ -1,4 +1,4 @@
-package Clock;
+package Lab23;
 
 public class BClock {
     static public IClock build(TypeClock type, String name, double price, int hour, int minute, int second) throws InvalidTime{

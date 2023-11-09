@@ -1,4 +1,4 @@
-package Clock;
+package Lab23;
 
 public class MinuteClock implements IClock {
     protected int hour, minute;
@@ -18,20 +18,31 @@ public class MinuteClock implements IClock {
         this.hour = hour;
         this.minute = minute;
     }
+
     @Override
-    public void setHour(int hour) throws InvalidTime {
-        if (hour < 0 || hour > 24)
-            throw new  IllegalArgumentException();
-        this.hour = hour;
+    public void setTime(TypeTime type, int time) throws InvalidTime {
+        switch(type){
+            case Hour:
+                if (time < 0 || time > 24)
+                    throw new  IllegalArgumentException();
+                this.hour = time;
+            case Minute:
+                if (time < 0 || time > 60)
+                    throw new  IllegalArgumentException();
+                this.minute = time;
+        }
     }
+
     @Override
-    public void setMinute(int minute) throws InvalidTime {
-        if (minute < 0 || minute > 60)
-            throw new IllegalArgumentException();
-        this.minute = minute;
+    public int getTime(TypeTime type){
+        switch(type){
+            case Hour:
+                return this.hour;
+            case Minute:
+                return this.minute;
+        }
+        return 0;
     }
-    @Override
-    public void setSecond(int second) throws InvalidTime {}
 
     @Override
     public String getName(){
@@ -41,21 +52,7 @@ public class MinuteClock implements IClock {
     public double getPrice(){
         return price;
     }
-    @Override
-    public int getHour()
-    {
-        return hour;
-    }
-    @Override
-    public int getMinute()
-    {
-        return minute;
-    }
-    @Override
-    public int getSecond()
-    {
-        return 0;
-    }
+
     @Override
     public String toString()
     {

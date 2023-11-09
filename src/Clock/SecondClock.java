@@ -1,4 +1,4 @@
-package Clock;
+package Lab23;
 
 public class SecondClock extends MinuteClock implements IClock{
     public int second;
@@ -19,17 +19,36 @@ public class SecondClock extends MinuteClock implements IClock{
     }
 
     @Override
-    public void setSecond(int second) throws InvalidTime {
-        if (second < 0 || second > 60)
-            throw new IllegalArgumentException();
-        this.second = second;
+    public void setTime(TypeTime type, int time) throws InvalidTime {
+        switch(type){
+            case Hour:
+                if (time < 0 || time > 24)
+                    throw new  IllegalArgumentException();
+                this.hour = time;
+            case Minute:
+                if (time < 0 || time > 60)
+                    throw new  IllegalArgumentException();
+                this.minute = time;
+            case Second:
+                if (time < 0 || time > 60)
+                    throw new  IllegalArgumentException();
+                this.second = time;
+        }
     }
 
     @Override
-    public int getSecond()
-    {
-        return second;
+    public int getTime(TypeTime type){
+        switch(type){
+            case Hour:
+                return this.hour;
+            case Minute:
+                return this.minute;
+            case Second:
+                return this.second;
+        }
+        return 0;
     }
+
     @Override
     public String toString()
     {
