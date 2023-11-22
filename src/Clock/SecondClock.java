@@ -1,15 +1,15 @@
-package Lab23;
+package Clock;
 
 public class SecondClock extends MinuteClock implements IClock{
     public int second;
 
     public SecondClock(){
         hour = minute = second = 0;
-        name = "emptyName";
+        brand = "emptyBrand";
         price = 0.0;
     }
-    public SecondClock (String name, double price, int hour, int minute, int second) throws InvalidTime{
-        this.name = name;
+    public SecondClock (String brand, double price, int hour, int minute, int second) throws InvalidTime{
+        this.brand = brand;
         this.price = price;
         if (hour < 0 || hour > 24 || minute < 0 || minute > 60 || second < 0 || second > 60)
             throw new IllegalArgumentException();
@@ -52,6 +52,6 @@ public class SecondClock extends MinuteClock implements IClock{
     @Override
     public String toString()
     {
-        return name + " " + price + " " + hour + ":" + minute + ":" + second;
+        return "(" + brand + ", " + price + ", " + hour + ":" + minute + ":" + second + ")";
     }
 }

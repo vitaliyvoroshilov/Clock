@@ -1,4 +1,4 @@
-package Lab23;
+package Clock;
 
 public enum TypeClock {
     MinuteClock,

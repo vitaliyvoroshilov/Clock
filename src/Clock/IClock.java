@@ -1,4 +1,4 @@
-package Lab23;
+package Clock;
 
 public interface IClock {
 
@@ -6,7 +6,7 @@ public interface IClock {
 
     public int getTime(TypeTime type) throws InvalidTime;
 
-    public String getName();
+    public String getBrand();
     public double getPrice();
 
     @Override

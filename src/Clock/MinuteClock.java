@@ -1,17 +1,17 @@
-package Lab23;
+package Clock;
 
 public class MinuteClock implements IClock {
     protected int hour, minute;
-    protected String name;
+    protected String brand;
     protected double price;
 
     public MinuteClock (){
-        name = "emptyName";
+        brand = "emptyBrand";
         price = 0.0;
         hour = minute = 0;
     }
-    public MinuteClock (String name, double price, int hour, int minute) throws InvalidTime{
-        this.name = name;
+    public MinuteClock (String brand, double price, int hour, int minute) throws InvalidTime{
+        this.brand = brand;
         this.price = price;
         if (hour < 0 || hour > 24 || minute < 0 || minute > 60)
             throw new InvalidTime();
@@ -45,8 +45,8 @@ public class MinuteClock implements IClock {
     }
 
     @Override
-    public String getName(){
-        return name;
+    public String getBrand(){
+        return brand;
     }
     @Override
     public double getPrice(){
@@ -56,6 +56,6 @@ public class MinuteClock implements IClock {
     @Override
     public String toString()
     {
-        return name + " " + price + " " + hour + ":" + minute;
+        return "(" + brand + ", " + price + ", " + hour + ":" + minute + ")";
     }
 }
