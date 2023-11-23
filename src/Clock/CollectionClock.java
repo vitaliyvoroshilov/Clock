@@ -82,7 +82,17 @@ public class CollectionClock implements Iterable<IClock>, Iterator<IClock> {
     }
 
     public void getAllSortedBrands() {
-        //setOfBrands.toArray()[0] = 1;
+        String[] arrayOfBrands = new String[setOfBrands.size()];
+        int i = 0;
+        for (String brand: setOfBrands)
+            arrayOfBrands[i++] = brand;
+        for (i = 0; i < arrayOfBrands.length - 1; i++)
+            for (int j = i + 1; j < arrayOfBrands.length; j++)
+                if (arrayOfBrands[i] > arrayOfBrands[j])
+
+
+
+        setOfBrands.toArray()[0]
         for (String brand: setOfBrands)
             System.out.println("getAllSortedBrands: " + brand);
     }
