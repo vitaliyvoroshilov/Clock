@@ -1,4 +1,4 @@
-package Clock;
+package Lab23;
 
 public class SecondClock extends MinuteClock implements IClock{
     public int second;

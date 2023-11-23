@@ -1,4 +1,4 @@
-package Clock;
+package Lab23;
 
 public class MinuteClock implements IClock {
     protected int hour, minute;
