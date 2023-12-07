@@ -22,6 +22,10 @@ public class CollectionClock implements Iterable<IClock>, Iterator<IClock> {
         
         this.allObservers = new ArrayList<>();
     }
+
+void events(){
+allObservers.forEach( (o)->{o.event(this);});
+}
     
     public void sub(IObserver obs) {
         this.allObservers.add(obs);
