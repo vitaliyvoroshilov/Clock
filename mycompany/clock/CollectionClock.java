@@ -39,6 +39,7 @@ allObservers.forEach( (o)->{o.event(this);});
             mapOfBrandFrequences.put(clock.getBrand(), 0);
         else
             mapOfBrandFrequences.put(clock.getBrand(), mapOfBrandFrequences.get(clock.getBrand()) + 1);
+    events();
     }
 
     public void remove(IClock clock) {
@@ -47,6 +48,7 @@ allObservers.forEach( (o)->{o.event(this);});
             mapOfBrandFrequences.remove(clock.getBrand());
         else
             mapOfBrandFrequences.put(clock.getBrand(), mapOfBrandFrequences.get(clock.getBrand()) - 1);
+    events();
     }
 
     @Override
