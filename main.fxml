@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.visualclock.MainController">
+    <bottom>
+        <Pane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: black;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="brand" layoutX="21.0" layoutY="38.0" prefHeight="25.0" prefWidth="135.0" />
+                <TextField fx:id="price" layoutX="175.0" layoutY="38.0" prefHeight="25.0" prefWidth="77.0" />
+                <Button layoutX="452.0" layoutY="38.0" mnemonicParsing="false" onAction="#addClock" prefHeight="25.0" prefWidth="134.0" text="Add" />
+                <TextField fx:id="hour" layoutX="261.0" layoutY="38.0" prefHeight="25.0" prefWidth="53.0" />
+                <TextField fx:id="minute" layoutX="314.0" layoutY="38.0" prefHeight="25.0" prefWidth="53.0" />
+                <TextField fx:id="second" layoutX="367.0" layoutY="38.0" prefHeight="25.0" prefWidth="53.0" />
+            <Label layoutX="72.0" layoutY="14.0" text="Brand:" />
+            <Label layoutX="197.0" layoutY="14.0" text="Price:" />
+            <Label layoutX="265.0" layoutY="14.0" text="Time (hour, minute, second):" />
+            </children>
+        </Pane>
+    </bottom>
+    <center>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                        <GridPane fx:id="allClocks" BorderPane.alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+               </top>
+            </BorderPane>
+         </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
